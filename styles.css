@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #FF8C00, #A9A9A9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.presentation-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.word {
+    background: linear-gradient(45deg, #FF8C00, #FFA500);
+    color: white;
+    padding: 12px 18px;
+    margin: 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.word:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+}
+
+.info-box {
+    background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #FF8C00;
+    margin-top: 0;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 140, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
+    }
+}
+
+.word.active {
+    animation: pulse 1.5s infinite;
+    background: linear-gradient(45deg, #FFA500, #FF4500);
+}
+
+/* Mejoras de accesibilidad y responsividad */
+@media (max-width: 768px) {
+    .presentation-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .word {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Transiciones suaves */
+.word, .info-box, h2, p {
+    transition: all 0.3s ease-in-out;
+}
